@@ -1,2 +1,4 @@
 ﻿.idea
 run-jupyter-conda.bat
+.ipynb_checkpoints
+__pycache__
