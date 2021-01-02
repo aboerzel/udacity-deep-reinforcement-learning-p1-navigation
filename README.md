@@ -54,7 +54,7 @@ The trained models:
 
 ## Environment Setup
 
-This section describes how to get the code for this project and configure the environment.
+This section describes how to get the code for this project and how to set up the environment.
 
 ### Getting the code
 
