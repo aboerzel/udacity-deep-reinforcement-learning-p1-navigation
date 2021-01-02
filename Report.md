@@ -67,11 +67,6 @@ This graph shows the rewards per episode within the evaluation of the Double Dee
 
 ![](./resources/Evaluation_Result_Double_DQN_Agent.png)
 
-
-The following GIF shows the trained Double DQN Agent who collects bananas in the area within an episode.  
-<!--![](./resources/Double DQN Agent Episode.gif)-->  
-
-
 ## Ideas for Future Work
 
 1. Further hyperparameter tuning may produce better results. 
