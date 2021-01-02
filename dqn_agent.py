@@ -45,17 +45,17 @@ class Agent:
         random.seed(seed)
 
         # Q-Network
-        hidden_layers = [128, 32]
+        self.hidden_layers = [128, 32]
 
         if self.dueling_network:
-            hidden_state_value = [64, 32]
+            self.hidden_state_value_layers = [64, 32]
 
-            self.qnetwork_local = DuelingQNetwork(state_size, action_size, seed, hidden_layers, hidden_state_value).to(device)
-            self.qnetwork_target = DuelingQNetwork(state_size, action_size, seed, hidden_layers, hidden_state_value).to(device)
+            self.qnetwork_local = DuelingQNetwork(state_size, action_size, seed, self.hidden_layers, self.hidden_state_value_layers).to(device)
+            self.qnetwork_target = DuelingQNetwork(state_size, action_size, seed, self.hidden_layers, self.hidden_state_value_layers).to(device)
             self.qnetwork_target.eval()
         else:
-            self.qnetwork_local = QNetwork(state_size, action_size, seed, hidden_layers).to(device)
-            self.qnetwork_target = QNetwork(state_size, action_size, seed, hidden_layers).to(device)
+            self.qnetwork_local = QNetwork(state_size, action_size, seed, self.hidden_layers).to(device)
+            self.qnetwork_target = QNetwork(state_size, action_size, seed, self.hidden_layers).to(device)
             self.qnetwork_target.eval()
 
         self.optimizer = optim.Adam(self.qnetwork_local.parameters(), lr=LR)

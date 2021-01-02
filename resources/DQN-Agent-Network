@@ -1,0 +1,38 @@
+digraph {
+	graph [size="12,12"]
+	node [align=left fontsize=12 height=0.2 ranksep=0.1 shape=box style=filled]
+	1996286944704 [label=AddmmBackward fillcolor=darkolivegreen1]
+	1996286945320 -> 1996286944704
+	1996286945320 [label="network.output.bias
+ (4)" fillcolor=lightblue]
+	1996286944816 -> 1996286944704
+	1996286944816 [label=ReluBackward0]
+	1996286945488 -> 1996286944816
+	1996286945488 [label=AddmmBackward]
+	1996286945712 -> 1996286945488
+	1996286945712 [label="network.fc1.bias
+ (32)" fillcolor=lightblue]
+	1996286945656 -> 1996286945488
+	1996286945656 [label=ReluBackward0]
+	1996286945824 -> 1996286945656
+	1996286945824 [label=AddmmBackward]
+	1996286945936 -> 1996286945824
+	1996286945936 [label="network.fc0.bias
+ (128)" fillcolor=lightblue]
+	1996286945992 -> 1996286945824
+	1996286945992 [label=TBackward]
+	1996286946104 -> 1996286945992
+	1996286946104 [label="network.fc0.weight
+ (128, 37)" fillcolor=lightblue]
+	1996286945544 -> 1996286945488
+	1996286945544 [label=TBackward]
+	1996286945880 -> 1996286945544
+	1996286945880 [label="network.fc1.weight
+ (32, 128)" fillcolor=lightblue]
+	1996286945376 -> 1996286944704
+	1996286945376 [label=TBackward]
+	1996286945600 -> 1996286945376
+	1996286945600 [label="network.output.weight
+ (4, 32)" fillcolor=lightblue]
+	size="10,10"
+}

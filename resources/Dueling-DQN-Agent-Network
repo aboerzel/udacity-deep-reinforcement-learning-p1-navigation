@@ -1,0 +1,79 @@
+digraph {
+	graph [size="12,12"]
+	node [align=left fontsize=12 height=0.2 ranksep=0.1 shape=box style=filled]
+	1996286944760 [label=AddBackward0 fillcolor=darkolivegreen1]
+	1996286945040 -> 1996286944760
+	1996286945040 [label=SubBackward0]
+	1996286944928 -> 1996286945040
+	1996286944928 [label=AddmmBackward]
+	1996286862056 -> 1996286944928
+	1996286862056 [label="network_advantage.adv_output.bias
+ (4)" fillcolor=lightblue]
+	1996286862112 -> 1996286944928
+	1996286862112 [label=ReluBackward0]
+	1996286862952 -> 1996286862112
+	1996286862952 [label=AddmmBackward]
+	1996286863064 -> 1996286862952
+	1996286863064 [label="network_advantage.adv_fc_1.bias
+ (32)" fillcolor=lightblue]
+	1996286863120 -> 1996286862952
+	1996286863120 [label=ReluBackward0]
+	1996286863288 -> 1996286863120
+	1996286863288 [label=AddmmBackward]
+	1996286863400 -> 1996286863288
+	1996286863400 [label="network_advantage.adv_fc_0.bias
+ (128)" fillcolor=lightblue]
+	1996286863456 -> 1996286863288
+	1996286863456 [label=TBackward]
+	1996286863568 -> 1996286863456
+	1996286863568 [label="network_advantage.adv_fc_0.weight
+ (128, 37)" fillcolor=lightblue]
+	1996286863176 -> 1996286862952
+	1996286863176 [label=TBackward]
+	1996286863344 -> 1996286863176
+	1996286863344 [label="network_advantage.adv_fc_1.weight
+ (32, 128)" fillcolor=lightblue]
+	1996286862840 -> 1996286944928
+	1996286862840 [label=TBackward]
+	1996286863008 -> 1996286862840
+	1996286863008 [label="network_advantage.adv_output.weight
+ (4, 32)" fillcolor=lightblue]
+	1996286861944 -> 1996286945040
+	1996286861944 [label=MeanBackward0]
+	1996286944928 -> 1996286861944
+	1996286945152 -> 1996286944760
+	1996286945152 [label=AddmmBackward]
+	1996286862784 -> 1996286945152
+	1996286862784 [label="network_value.val_output.bias
+ (1)" fillcolor=lightblue]
+	1996286862896 -> 1996286945152
+	1996286862896 [label=ReluBackward0]
+	1996286863512 -> 1996286862896
+	1996286863512 [label=AddmmBackward]
+	1996286863736 -> 1996286863512
+	1996286863736 [label="network_value.val_fc_1.bias
+ (32)" fillcolor=lightblue]
+	1996286863792 -> 1996286863512
+	1996286863792 [label=ReluBackward0]
+	1996286863960 -> 1996286863792
+	1996286863960 [label=AddmmBackward]
+	1996286864072 -> 1996286863960
+	1996286864072 [label="network_value.val_fc_0.bias
+ (64)" fillcolor=lightblue]
+	1996286864128 -> 1996286863960
+	1996286864128 [label=TBackward]
+	1996286864240 -> 1996286864128
+	1996286864240 [label="network_value.val_fc_0.weight
+ (64, 37)" fillcolor=lightblue]
+	1996286863848 -> 1996286863512
+	1996286863848 [label=TBackward]
+	1996286864016 -> 1996286863848
+	1996286864016 [label="network_value.val_fc_1.weight
+ (32, 64)" fillcolor=lightblue]
+	1996286863232 -> 1996286945152
+	1996286863232 [label=TBackward]
+	1996286863680 -> 1996286863232
+	1996286863680 [label="network_value.val_output.weight
+ (1, 32)" fillcolor=lightblue]
+	size="10,10"
+}
