@@ -113,29 +113,32 @@ To experiment with how the Agent learns through distinct parameters, you can tun
 
 **1.** In the **Navigation.ipynb** file  
 
-* n_episodes: Maximum number of training episodes
-* max_t: Maximum number of timesteps per episode
-* eps_start: Starting value of epsilon, for epsilon-greedy action selection
-* eps_end: Minimum value of epsilon
-* eps_decay: Multiplicative factor (per episode) for decreasing epsilon  
+|Parameter         |Description|
+|:-----------------|:----------|
+|n_episodes        |Maximum number of training episodes|
+|max_t             |Maximum number of timesteps per episode|
+|eps_start         |Starting value of epsilon, for epsilon-greedy action selection|
+|eps_end           |Minimum value of epsilon|
+|eps_decay         |Multiplicative factor (per episode) for decreasing epsilon|
+|double_dqn        |Whether or not to use Double Deep Q-Network algorithm|
+|dueling_network   |Whether or not to use Dueling Network algorithm|
+|prioritized_replay|Whether or not to use Prioritized Experience Replay|
 
-* USE\_DOUBLE\_DQN: whether or not to use Double Deep Q-Network algorithm
-* USE\_DUELING\_NETWORK: whether or not to use Dueling Network algorithm
-* USE\_PRIORITIZED\_REPLAY: whether or not to use Prioritized Experience Replay
 
 **2.** In the **dqn_agent.py** file
 
-* BUFFER_SIZE: Replay buffer size
-* BATCH_SIZE: Minibatch size
-* GAMMA: Discount factor for expected rewards
-* TAU: Multiplicative factor for updating the target network weights
-* LR: Learning rate
-* LR_DECAY: Multiplicative factor of learning rate decay
-* UPDATE_EVERY: How often to update the network
+|Parameter                 |Description|
+|:-------------------------|:----------|
+|BUFFER_SIZE               |Replay buffer size|
+|BATCH_SIZE                |Batch size|
+|GAMMA                     |Discount factor for expected rewards|
+|TAU                       |Multiplicative factor for updating the target network weights|
+|LR                        |Learning rate|
+|LR_DECAY                  |Multiplicative factor of learning rate decay|
+|UPDATE_EVERY              |How often to update the network|
+|hidden_layers             |Number and size of the Deep Q-Network layers|
+|hidden_state_value_layers |...|
+|alpha                     |Determines how much prioritization is used; α = 0 corresponding to the uniform case|
+|beta                      |Amount of importance-sampling correction; β = 1 fully compensates for the non-uniform probabilities|
+|beta_scheduler            |Multiplicative factor (per sample) for increasing beta (should be >= 1.0)|
 
-* hidden_layers: Number and size of the Deep Q-Network layers
-* hidden_state_value_layers: ....
-
-* alpha: determines how much prioritization is used; α = 0 corresponding to the uniform case
-* beta: amount of importance-sampling correction; β = 1 fully compensates for the non-uniform probabilities
-* beta_scheduler: multiplicative factor (per sample) for increasing beta (should be >= 1.0)
