@@ -86,7 +86,7 @@ $ conda activate drlnd
 $ jupyter notebook
 ```
 
-Click on the `Navigation.ipynb` notebook to open it.  
+Click on the [Navigation.ipynb](Navigation.ipynb) notebook to open it.  
 
 ![](./resources/jupyter_notebook_workspace.png)  
 
