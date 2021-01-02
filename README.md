@@ -101,7 +101,7 @@ Available options:
 * linux_x86_64  
 
 ![](./resources/choose_operating_system.png)
-  
+
 Then execute the notebook cells one after the other with the key combination **SHIFT + ENTER**, starting with cell 1.
 
 In order to evaluate the agents only with the pre-trained weights, the cells for the training can be skipped. 
