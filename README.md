@@ -2,21 +2,19 @@
 
 [image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
 
-# Project 1: Navigation
+# Udacity Deep Reinforcement Learning Nanodegree - Project 1: Navigation
 
 ## Introduction
 
-This project is part of the [Deep Reinforcement Learning Nanodegree Program](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893), by Udacity.  
-
-The goal in this project is to create and train an agent to navigate and collect bananas in a large, square world.    
+The goal of this project is to create and train an agent who will navigate a large, square world and collect bananas.
 
 ![Trained Agent][image1]
 
-## Understanding the environment
+### The environment
 This environment has been built using the [Unity Machine Learning Agents Toolkit (ML-Agents)](https://github.com/Unity-Technologies/ml-agents), which is an open-source Unity plugin that enables games and simulations to serve as environments for training intelligent agents.  
 
 
-In this environment, an Agent navigates a large, square world collecting bananas. Each episode of this task is limited to 300 steps. A reward of **+1** is provided for collecting a yellow banana, and a reward of **-1** is provided for collecting a blue banana. Thus, the goal of the agent is to collect as many yellow bananas as possible, avoiding the blue ones.
+In this environment, an Agent navigates a large, square world collecting bananas. A reward of **+1** is provided for collecting a yellow banana, and a reward of **-1** is provided for collecting a blue banana. Thus, the goal of your agent is to collect as many yellow bananas as possible while avoiding blue bananas.
 
 The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.  Given this information, the agent has to learn how to best select actions.  Four discrete actions are available, corresponding to:
 - **`0`** - move forward.
@@ -24,23 +22,23 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 - **`2`** - turn left.
 - **`3`** - turn right.
 
-To solve the environment, the Agent must obtain an average score of **+13** over **100** consecutive episodes.
+The task is episodic, and in order to solve the environment, the agent must get an average score of **+13** over **100** consecutive episodes.
 
-## Included in this repository
+## Files included in this repository
 
 The code used to create, train and evaluate the agent:
 
-|File                         |Description                                                        |
-|:----------------------------|:------------------------------------------------------------------|
-|Navigation.ipynb             |Jupyter notebook to train and evaluate the agent                   |
-|dqn_agent.py                 |Implementation of the DQN agent                                    |
-|model.py                     |Network architecture used by the DQN agent                         |
-|dueling_model.py             |Network architecture used by the Dueling DQN agent                 |
-|replay_buffer.py             |Implementation of the Replay Buffer                                |
-|prioritized_replay_buffer.py |Implementation of the Prioritized Experienced Replay Buffer        |
-|drlnd.yml                    |Conda environment file                                             |
-|Report.md                    |Description of the development process and the learning algorithm  |
-|README.md                    |This README.md file                                                |
+|File                                                         |Description                                                        |
+|:------------------------------------------------------------|:------------------------------------------------------------------|
+|[Navigation.ipynb](Navigation.ipynb)                         |Jupyter notebook to train and evaluate the agent                   |
+|[dqn_agent.py](dqn_agent.py)                                 |Implementation of the DQN agent                                    |
+|[model.py](model.py)                                         |Network architecture used by the DQN agent                         |
+|[dueling_model.py](dueling_model.py)                         |Network architecture used by the Dueling DQN agent                 |
+|[replay_buffer.py](replay_buffer.py)                         |Implementation of the Replay Buffer                                |
+|[prioritized_replay_buffer.py](prioritized_replay_buffer.py) |Implementation of the Prioritized Experienced Replay Buffer        |
+|[drlnd.yml](drlnd.yml)                                       |Conda environment file                                             |
+|[Report.md](Report.md)                                       |Description of the development process and the learning algorithm  |
+|README.md                                                    |This README.md file                                                |
 
 The trained models:
 
@@ -102,16 +100,16 @@ Available options:
 
 ![](./resources/choose_operating_system.png)
 
-Then execute the notebook cells one after the other with the key combination **SHIFT + ENTER**, starting with cell 1.
+Then execute the notebook cells one after the other with the key combination **SHIFT + ENTER**, starting with cell **1**.
 
 In order to evaluate the agents only with the pre-trained weights, the cells for the training can be skipped. 
 The cells for visualizing the network architecture can also be skipped. 
 Corresponding information can be found in the comments in the Jupiter Notebook.
 
-### Adjusting the Hyperparameters
-To experiment with how the Agent learns through distinct parameters, you can tune these variables:  
+### Hyperparameters
+The learning process can be influenced by changing the following parameters:  
 
-**1.** In the **Navigation.ipynb** file  
+In the [Navigation.ipynb](Navigation.ipynb) file:  
 
 |Parameter         |Description|
 |:-----------------|:----------|
@@ -125,7 +123,7 @@ To experiment with how the Agent learns through distinct parameters, you can tun
 |prioritized_replay|Whether or not to use Prioritized Experience Replay|
 
 
-**2.** In the **dqn_agent.py** file
+In the [dqn_agent.py](dqn_agent.py) file:
 
 |Parameter                 |Description|
 |:-------------------------|:----------|
@@ -137,7 +135,7 @@ To experiment with how the Agent learns through distinct parameters, you can tun
 |LR_DECAY                  |Multiplicative factor of learning rate decay|
 |UPDATE_EVERY              |How often to update the network|
 |hidden_layers             |Number and size of the Deep Q-Network layers|
-|hidden_state_value_layers |...|
+|hidden_state_value_layers |Number and size of the value network of the Dueling Network|
 |alpha                     |Determines how much prioritization is used; α = 0 corresponding to the uniform case|
 |beta                      |Amount of importance-sampling correction; β = 1 fully compensates for the non-uniform probabilities|
 |beta_scheduler            |Multiplicative factor (per sample) for increasing beta (should be >= 1.0)|
