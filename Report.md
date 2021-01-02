@@ -59,13 +59,13 @@ It illustrates that the Agent is able to receive an average reward of at least +
 
 In this case, the Agent solved the environment after **289 episodes**.
 
-![](./resources/Training Result Double DQN Agent.png)
+![](./resources/Training_Result_Double_DQN_Agent.png)
 
 
 ### Evaluation result 
 This graph shows the rewards per episode within the evaluation of the Double Deep Q-Network Agent over 100 episodes and the average score.
 
-![](./resources/Evaluation Result Double DQN Agent.png)
+![](./resources/Evaluation_Result_Double_DQN_Agent.png)
 
 
 The following GIF shows the trained Double DQN Agent who collects bananas in the area within an episode.  
