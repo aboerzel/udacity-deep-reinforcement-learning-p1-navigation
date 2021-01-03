@@ -36,8 +36,61 @@ Last but not least, I implemented the Prioritized Experience Replay algorithm as
 I trained one agent at a time using the 4 DQN algorithms mentioned above until they got an average score of **+13** in the last **100** consecutive episodes. 
 I have also adjusted the hyperparameters to get the best training results.
 
+### Hyperparameters
+The learning process can be influenced by changing the following parameters:  
+
+In the [Navigation.ipynb](Navigation.ipynb) file:  
+
+Parameters for controlling the training length and the epsilon-greedy action selection:
+
+|Parameter         |Value |Description|
+|:-----------------|-----:|:----------|
+|n_episodes        |  1000|Maximum number of training episodes|
+|max_t             |   500|Maximum number of timesteps per episode|
+|eps_start         |  0.10|Starting value of epsilon, for epsilon-greedy action selection|
+|eps_end           |  0.01|Minimum value of epsilon|
+|eps_decay         |  0.98|Multiplicative factor (per episode) for decreasing epsilon|
+
+Parameters to select algorithms. Here as an example for the **Double DQN Agent without Prioritized Experience Replay**:
+
+|Parameter         |Value |Description|
+|:-----------------|-----:|:----------|
+|double_dqn        |  True|Whether or not to use Double Deep Q-Network algorithm|
+|dueling_network   | False|Whether or not to use Dueling Network algorithm|
+|prioritized_replay| False|Whether or not to use Prioritized Experience Replay|
+
+In the [dqn_agent.py](dqn_agent.py) file:
+
+Common DQN parameters:
+
+|Parameter                 |Value     |Description|
+|:-------------------------|---------:|:----------|
+|BUFFER_SIZE               |       1e5|Replay buffer size|
+|BATCH_SIZE                |        64|Batch size|
+|GAMMA                     |      0.99|Discount factor for expected rewards|
+|TAU                       |      1e-3|Multiplicative factor for updating the target network weights|
+|LR                        |      5e-4|Learning rate|
+|LR_DECAY                  |    0.9999|Multiplicative factor of learning rate decay|
+|UPDATE_EVERY              |         4|How often to update the network|
+|hidden_layers             | [128, 32]|Number and size of the Deep Q-Network layers|
+
+Additional parameters for the **Dueling Network Algorithm**:
+
+|Parameter                 |Value     |Description|
+|:-------------------------|---------:|:----------|
+|hidden_state_value_layers |  [64, 32]|Number and size of the value network of the Dueling Network|
+
+Additional parameters for the **Prioritized Experience Replay Algorithm**:
+
+|Parameter                 |Value     |Description|
+|:-------------------------|---------:|:----------|
+|alpha                     |       0.6|Determines how much prioritization is used; α = 0 corresponding to the uniform case|
+|beta                      |       0.4|Amount of importance-sampling correction; β = 1 fully compensates for the non-uniform probabilities|
+|beta_scheduler            |       1.0|Multiplicative factor (per sample) for increasing beta (should be >= 1.0)|
+
 Then I evaluated each of the agents over exactly 100 episodes and determined the average score.
 
+### Results in comparison
 The following table shows the evaluation results of the different agents:
 
 Agent                                         | # Training Episodes | Average Score (Evaluation 100 Episodes) 
